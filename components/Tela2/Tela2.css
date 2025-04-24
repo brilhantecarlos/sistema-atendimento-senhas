@@ -1,0 +1,57 @@
+/* Fundo branco */
+.tela2 {
+  background-color: #ffffff; /* Branco */
+  height: 100vh; /* Altura total da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  color: #2e4392; /* Azul */
+}
+
+/* Relógio no canto superior esquerdo */
+.relogio {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Contador no canto superior direito */
+.contador {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Senha no centro */
+.senha-atual {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+}
+
+/* Últimas senhas na parte inferior */
+.ultimas-senhas {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.ultimas-senhas h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.ultimas-senhas ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ultimas-senhas li {
+  font-size: 18px;
+  margin: 5px 0;
+}
