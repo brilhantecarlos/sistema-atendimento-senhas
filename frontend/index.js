@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import AtendenteTela1 from './components/AtendenteTela1/AtendenteTela1';
+import Tela2 from './components/Tela2/Tela2';
 
 const App = () => {
+  const [senhaAtual, setSenhaAtual] = useState(null);
+  const [ultimasSenhas, setUltimasSenhas] = useState([]);
+
+  const chamarNovaSenha = () => {
+    const novaSenha = `230424-HP${ultimasSenhas.length + 1}`; // Exemplo gerado
+    setSenhaAtual(novaSenha);
+    setUltimasSenhas([novaSenha, ...ultimasSenhas].slice(0, 5)); // Limita a 5 senhas
+  };
+
   return (
     <div>
-      <h1>Sistema de Atendimento de Senhas</h1>
-      <p>Bem-vindo ao sistema de atendimento!</p>
-      {/* Renderizando a Tela do Atendente */}
-      <AtendenteTela1 />
+      <button onClick={chamarNovaSenha}>Chamar Nova Senha</button>
+      <Tela2 senhaAtual={senhaAtual} ultimasSenhas={ultimasSenhas} />
     </div>
   );
 };
 
+// Apenas uma chamada ao ReactDOM.render
 ReactDOM.render(
   <React.StrictMode>
     <App />
