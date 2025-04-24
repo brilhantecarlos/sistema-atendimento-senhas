@@ -1,0 +1,45 @@
+/* Estilo para a tela */
+.tela-cliente3 {
+  background-color: #ffffff; /* Fundo branco */
+  height: 100vh; /* Altura total da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0; /* Remove margens */
+  padding: 0; /* Remove espaçamentos */
+}
+
+/* Estilo do título */
+.titulo {
+  color: #2e4392; /* Azul */
+  font-size: 36px; /* Tamanho grande */
+  margin-bottom: 20px; /* Espaço inferior */
+  text-align: center;
+}
+
+/* Estilo da senha */
+.senha {
+  color: #2e4392; /* Azul */
+  font-size: 64px; /* Tamanho muito grande */
+  font-weight: bold; /* Texto em negrito */
+  text-align: center;
+  margin-bottom: 40px; /* Espaço inferior */
+}
+
+/* Botão Finalizar */
+.botao-finalizar {
+  background-color: #2e4392; /* Azul */
+  color: #ffffff; /* Branco */
+  border: none; /* Remove borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 18px; /* Tamanho do texto */
+  font-weight: bold; /* Texto em negrito */
+  padding: 10px 20px; /* Espaçamento interno */
+  cursor: pointer; /* Indicador de clique */
+  transition: background-color 0.3s; /* Transição suave */
+}
+
+.botao-finalizar:hover {
+  background-color: #1d2f6f; /* Azul mais escuro ao passar o mouse */
+}
