@@ -1,19 +1,19 @@
 /* Fundo branco para a tela */
 .tela-cliente1 {
-  background-color: #ffffff; /* Branco */
+  background-color: #ffffff; /* Fundo branco */
   height: 100vh; /* Altura total da tela */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  padding: 0;
+  margin: 0; /* Remove margens */
+  padding: 0; /* Remove espaçamentos */
 }
 
 /* Texto grande no centro */
 .texto-centro {
   color: #2e4392; /* Azul */
-  font-size: 36px; /* Texto grande */
+  font-size: 36px; /* Tamanho do texto */
   text-align: center;
   margin-bottom: 20px; /* Espaço inferior */
 }
@@ -27,9 +27,9 @@
   font-size: 18px; /* Tamanho do texto */
   padding: 10px 20px; /* Espaçamento interno */
   cursor: pointer; /* Indicador de clique */
-  font-weight: bold; /* Texto em negrito */
+  font-weight: bold; /* Negrito no texto */
 }
 
 .botao-iniciar:hover {
-  background-color: #1d2f6f; /* Azul mais escuro no hover */
+  background-color: #1d2f6f; /* Azul mais escuro ao passar o mouse */
 }
