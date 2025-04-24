@@ -1,64 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import './Tela2.css';
+import React, { useState } from 'react';
+import './TelaCliente2.css';
 
-const Tela2 = ({ senhaAtual, ultimasSenhas }) => {
-  const [horaAtual, setHoraAtual] = useState(new Date());
-  const [contador, setContador] = useState(0);
-  const [intervalId, setIntervalId] = useState(null);
+const TelaCliente2 = ({ onContinuar }) => {
+  const [perfilSelecionado, setPerfilSelecionado] = useState('');
 
-  // Atualiza o relógio
-  useEffect(() => {
-    const intervaloRelogio = setInterval(() => {
-      setHoraAtual(new Date());
-    }, 1000); // Atualiza a cada segundo
-
-    return () => clearInterval(intervaloRelogio); // Limpeza
-  }, []);
-
-  // Inicia o contador quando a senha é chamada
-  useEffect(() => {
-    if (senhaAtual) {
-      setContador(0); // Reinicia o contador
-      if (intervalId) clearInterval(intervalId); // Limpa o contador anterior
-
-      const intervaloContador = setInterval(() => {
-        setContador((prev) => prev + 1);
-      }, 1000); // Incrementa a cada segundo
-
-      setIntervalId(intervaloContador);
-
-      return () => clearInterval(intervaloContador); // Limpeza
-    }
-  }, [senhaAtual]);
+  const handleSelecao = (perfil) => {
+    setPerfilSelecionado(perfil);
+  };
 
   return (
-    <div className="tela2">
-      {/* Relógio no canto superior esquerdo */}
-      <div className="relogio">
-        {horaAtual.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
+    <div className="tela-cliente2">
+      {/* Título */}
+      <h1 className="titulo">Qual o seu perfil?</h1>
+
+      {/* Opções de seleção */}
+      <div className="opcoes">
+        <div
+          className={`opcao ${perfilSelecionado === 'Preferencial' ? 'selecionado' : ''}`}
+          onClick={() => handleSelecao('Preferencial')}
+        >
+          Preferencial
+        </div>
+        <div
+          className={`opcao ${perfilSelecionado === 'Geral' ? 'selecionado' : ''}`}
+          onClick={() => handleSelecao('Geral')}
+        >
+          Geral
+        </div>
+        <div
+          className={`opcao ${perfilSelecionado === 'Resultado de Exames' ? 'selecionado' : ''}`}
+          onClick={() => handleSelecao('Resultado de Exames')}
+        >
+          Resultado de Exames
+        </div>
       </div>
 
-      {/* Contador no canto superior direito */}
-      <div className="contador">{contador}s</div>
-
-      {/* Senha no centro */}
-      <div className="senha-atual">{senhaAtual || "Aguardando senha..."}</div>
-
-      {/* Últimas senhas na parte inferior */}
-      <div className="ultimas-senhas">
-        <h3>Últimas Senhas:</h3>
-        <ul>
-          {ultimasSenhas.length > 0 ? (
-            ultimasSenhas.map((senha, index) => (
-              <li key={index}>{senha}</li>
-            ))
-          ) : (
-            <li>Nenhuma senha chamada ainda.</li>
-          )}
-        </ul>
-      </div>
+      {/* Botão Continuar */}
+      {perfilSelecionado && (
+        <button className="botao-continuar" onClick={onContinuar}>
+          Continuar
+        </button>
+      )}
     </div>
   );
 };
 
-export default Tela2;
+export default TelaCliente2;
+ 
